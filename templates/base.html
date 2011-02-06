@@ -19,14 +19,14 @@
 <body>
   <div class="container">
     <div id="header">
-      <div id="left_top_bar" class="span-20">
-        [Site Name]
+      <div id="left_top_bar" class="span-14">
+        <a href="/">[Site Name]</a>
       </div>
-      <div id="right_top_bar" class="span-4 last">
+      <div id="right_top_bar" class="span-10 last">
         {% if request.user.is_authenticated %}
           <p>Logged in as {{ request.user }} | <a href="{% url accounts_user_settings %}">My Settings</a> | <a href="{% url logout %}">Logout</a></p>
         {% else %}
-            <a href="">Login</a> or <a href="">Register</a>
+            <a href="{% url login %}">Login</a> or <a href="{% url register %}">Register</a>
         {% endif %}
       </div><!-- span 24 -->
       <hr />

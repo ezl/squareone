@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block title %}
+  Sign up! - {{ block.super }}
+{% endblock %}
+
+{% block main %}
+<div class="span-14">
+  <form action="" method="post">{% csrf_token %}
+    <section>
+      <header>
+        <h2>Sign up now!</h2>
+        <p>Just fill out the damn form.</p>
+      </header>
+      {% include "default_form.html" %}
+      <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect }}" />
+      <footer>
+        <p>By registering you agree to the <a target="_blank" href="#">terms of service</a>.</p>
+        <p><span class="button"><input type="submit" value="Create my account" class="register-button" /></span></p>
+      </footer>
+    </section>
+  </form>
+</div>
+{% endblock %}
