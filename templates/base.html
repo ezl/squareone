@@ -1,0 +1,62 @@
+  <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+  "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+  <title>{% block title %}Site Title{% endblock %}</title>
+  <link rel="stylesheet" href="{{ MEDIA_URL }}css/blueprint/screen.css" type="text/css" media="screen">
+  <link rel="stylesheet" href="{{ MEDIA_URL }}css/blueprint/print.css" type="text/css" media="print">
+  <!--[if lt IE 8]><link rel="stylesheet" href="{{ MEDIA_URL }}css/blueprint/ie.css" type="text/css" media="screen, projection"><![endif]-->
+  <link type="text/css" href="{{MEDIA_URL}}css/jqueryui/jquery-ui-1.8.6.custom.css" rel="Stylesheet" />	
+  <script type="text/javascript" src="{{MEDIA_URL}}js/jquery-1.4.2.min.js"></script>
+  <script type="text/javascript" src="{{MEDIA_URL}}js/jquery-ui-1.8.6.custom.min.js"></script>
+
+  <meta name="description" content="Description">
+  <meta name="keywords" content="Key, Words">
+
+  {% block extra_head %}{% endblock %}
+</head>
+
+<body>
+  <div class="container">
+    <div id="header">
+      <div id="left_top_bar" class="span-20">
+        [Site Name]
+      </div>
+      <div id="right_top_bar" class="span-4 last">
+        {% if request.user.is_authenticated %}
+          <p>Logged in as {{ request.user }} | <a href="{% url accounts_user_settings %}">My Settings</a> | <a href="{% url logout %}">Logout</a></p>
+        {% else %}
+            <a href="">Login</a> or <a href="">Register</a>
+        {% endif %}
+      </div><!-- span 24 -->
+      <hr />
+    </div>
+
+    <div id="main">
+      {% block messages %}
+        {% if messages %}
+          <div class="span-24 last">
+            {% for message in messages %}
+              <div{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</div>
+            {% endfor %}
+          </div>
+          <div class="clear"></div>
+        {% endif %}
+      {% endblock %}
+
+      {% block main %}{% endblock %}
+    </div><!-- main -->
+
+    <div id="footer">
+      <div class="span-24 last append-bottom">
+        {% block footer %}
+          <hr/ >
+          Here, have a footer!
+        {% endblock %}
+      </div>
+    </div><!-- footer -->
+
+  </div><!-- big container guy -->
+
+</body>
+</html>

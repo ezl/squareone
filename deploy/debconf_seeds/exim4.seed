@@ -1,0 +1,1 @@
+exim4-config	exim4/dc_eximconfig_configtype	select	internet site; mail is sent and received directly using SMTP

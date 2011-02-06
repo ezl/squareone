@@ -1,0 +1,7 @@
+*.pyc
+*.sqlite3
+*.swp
+media/app_doc_attachments/
+media/adminfiles_uploads/
+*~
+

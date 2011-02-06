@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% load adminfiles_tags %}
+
+{% block main %}
+  <div class="span-24">
+    <h1>{{ flatpage.title }}</h1>
+    {{ flatpage.content|render_uploads|safe }}
+  </div>
+{% endblock %}

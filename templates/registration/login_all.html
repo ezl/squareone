@@ -1,0 +1,34 @@
+<div class="span-10">
+  <form action="" method="post">{% csrf_token %}
+    <section>
+      <header>
+        <h2>Login</h2>
+        {% if form.errors %}
+          <ul class="errorlist formerrorlist">
+            <li>Incorrect Username and Password Combination.</li>
+          </ul>
+        {% endif %}
+      </header>
+
+      {% for field in form %}
+      <div class="form_field {% if field.errors %}form_field_error{% endif %}">
+        {{ field.label_tag }}<br />
+        {{ field }}
+        {% if field.errors %}
+          {{ field.errors }}
+        {% else %}
+          {% if field.help_text %}<p class="help_text">{{ field.help_text }}</p>{% endif %}
+        {% endif %}
+        <div class="clear"></div>
+      </div>
+      {% endfor %}
+      {% if next %}
+        <input type="hidden" name="next" id="id_next" value="{{ next }}" />
+      {% endif %}
+      <footer>
+        <p><span class="button"><input type="submit" value="Login" class="login-button" /></span>
+        &nbsp; &nbsp; Forgot your password? <a href="mailto:support@leasely.com">Contact us</a>.</p>
+      </footer>
+    </section>
+  </form>
+</div>
