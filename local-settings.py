@@ -17,7 +17,7 @@ DATABASES = {
     'default':{
         #'ENGINE': 'postgresql_psycopg2',
         'ENGINE': 'sqlite3',
-        'NAME': 'leasely-ezlDB.sqlite3',
+        'NAME': 'project_DB.sqlite3',
     }
 }
 SOUTH_DATABASE_ADAPTERS = {
