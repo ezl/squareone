@@ -109,10 +109,9 @@ INSTALLED_APPS = (
 
     # third party
     'adminfiles',
+    'sorl.thumbnail',
     'django_extensions',
     'debug_toolbar',
-    'notification',
-    'sorl.thumbnail',
     'south',
 
     # ours
