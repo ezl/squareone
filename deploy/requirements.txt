@@ -14,5 +14,4 @@ south
 wsgiref==0.1.2
 django-adminfiles==0.5.0
 sorl-thumbnail==3.2.5
-pisa==3.0.33
 html5lib==0.90
