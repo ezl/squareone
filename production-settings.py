@@ -10,9 +10,9 @@ ADMINS = (
 DATABASES = {
     'default':{
         'ENGINE': 'postgresql_psycopg2',
-        'NAME': '',
+        'NAME': 'squareone',
         'HOST': 'localhost',
-        'USER': '',
+        'USER': 'squareone',
         'PASSWORD': '',
     }
 }

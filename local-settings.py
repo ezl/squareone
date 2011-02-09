@@ -17,15 +17,12 @@ DATABASES = {
     'default':{
         #'ENGINE': 'postgresql_psycopg2',
         'ENGINE': 'sqlite3',
-        'NAME': 'project_DB.sqlite3',
+        'NAME': 'squareone_DB.sqlite3',
     }
-}
-SOUTH_DATABASE_ADAPTERS = {
-    'default': 'south.db.sqlite3',
 }
 
 SOUTH_DATABASE_ADAPTERS = {
-    'default': 'south.db.postgresql_psycopg2',
+    'default': 'south.db.sqlite3',
 }
 
 EMAIL_HOST = 'localhost'
