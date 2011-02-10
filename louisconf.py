@@ -64,9 +64,9 @@ GIT_BRANCH = "master"
 DJANGO_SETTINGS_MODULE = "production-settings"
 
 # ==================
-POSTGRES_USERNAME = ""
-POSTGRES_PASSWORD = ""
-POSTGRES_DBNAME = ""
+POSTGRES_USERNAME = "squareone"
+POSTGRES_PASSWORD = "squareone"
+POSTGRES_DBNAME = "squareone"
 
 APACHE_SERVER_NAME = "leasely.com"
 APACHE_SERVER_ALIAS = "*.leasely.com"
