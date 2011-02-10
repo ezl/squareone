@@ -1,3 +1,3 @@
-square one is squareone lets test squareone/poop
+square one is FOOOOOOOOOOOOOOOOO lets test FOOOOOOOOOOOOOOOOO/poop
 
-here/is/a/path/squareone/lalala
+here/is/a/path/FOOOOOOOOOOOOOOOOO/lalala

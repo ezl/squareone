@@ -7,6 +7,7 @@ PROJECT_DIR = os.path.dirname(__file__)
 
 ADMINS = (
     # ('Admin', 'null@example.com'),
+    # Use local-settings.py and production-settings.py
 )
 
 MANAGERS = ADMINS

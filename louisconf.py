@@ -55,12 +55,19 @@ HOSTS = (
     ('173.255.225.206', 'poop'),
 )
 
-"""
-project  name
 
-apache servername
-apache server alias
-project username
+PROJECT_NAME = "squareone"
+GIT_URL = "https://github.com/ezl/squareone.git"
 
-"""
+PROJECT_USERNAME = None
+GIT_BRANCH = "master"
+DJANGO_SETTINGS_MODULE = "production-settings"
 
+# ==================
+POSTGRES_USERNAME = ""
+POSTGRES_PASSWORD = ""
+POSTGRES_DBNAME = ""
+
+APACHE_SERVER_NAME = "leasely.com"
+APACHE_SERVER_ALIAS = "*.leasely.com"
+APACHE_SERVER_ADMIN = "null@example.com"

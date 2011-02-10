@@ -1,6 +1,6 @@
 # vim: set ft=apache :
 <VirtualHost *:80>
-    ServerAdmin sysadmin@squareone.com
+    ServerAdmin %s(server_admin)s
 
     ServerName %(server_name)s
     ServerAlias %(server_alias)s
@@ -43,11 +43,11 @@
     # RewriteCond %%{REQUEST_URI} !/index\.html$
     # RewriteCond %%{REQUEST_URI} !/site_media/.*
     # RewriteRule ^(.*)$ /index.html [L]
-    # DocumentRoot /home/squareone/squareone/media/
+    # DocumentRoot /home/%(project_username)s/%(project_name)s/media/
 </VirtualHost>
 
 # <VirtualHost *:443>
-#     ServerAdmin sysadmin@squareone.com
+#     ServerAdmin %s(server_admin)s
 # 
 #     ServerName %(server_name)s
 #     ServerAlias %(server_alias)s
@@ -82,9 +82,9 @@
 #     SSLCipherSuite ALL:!ADH:!EXPORT56:RC4+RSA:+HIGH:+MEDIUM:+LOW:+SSLv2:+EXP:+eNULL
 #     # ssl hosts on highsite1 use these params too:
 #     #SSLOptions +FakeBasicAuth +ExportCertData +StrictRequire
-#     SSLCertificateFile /home/%(project_username)s/squareone/deploy/ssl/squareone.com.crt
-#     SSLCertificateKeyFile /home/%(project_username)s/squareone/deploy/ssl/www.squareone.com.key
-#     SSLCertificateChainFile /home/%(project_username)s/squareone/deploy/ssl/gd_bundle.crt
+#     SSLCertificateFile /home/%(project_username)s/%(project_name)s/deploy/ssl/squareone.com.crt
+#     SSLCertificateKeyFile /home/%(project_username)s/%(project_name)s/deploy/ssl/www.squareone.com.key
+#     SSLCertificateChainFile /home/%(project_username)s/%(project_name)s/deploy/ssl/gd_bundle.crt
 # 
 #     #### WSGI ####
 #     WSGIProcessGroup %(project_username)s
