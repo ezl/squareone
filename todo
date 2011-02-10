@@ -9,7 +9,6 @@ add virtualenvwrapper to the project user
 rename site title in templates
 create README
 
-
 @todo
 test addition and removal of other users
 
