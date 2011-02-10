@@ -1,6 +1,6 @@
 # vim: set ft=apache :
 <VirtualHost *:80>
-    ServerAdmin %s(server_admin)s
+    ServerAdmin %(server_admin)s
 
     ServerName %(server_name)s
     ServerAlias %(server_alias)s
@@ -47,7 +47,7 @@
 </VirtualHost>
 
 # <VirtualHost *:443>
-#     ServerAdmin %s(server_admin)s
+#     ServerAdmin %(server_admin)s
 # 
 #     ServerName %(server_name)s
 #     ServerAlias %(server_alias)s
