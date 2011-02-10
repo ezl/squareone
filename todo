@@ -1,5 +1,7 @@
 check for isntances of "leasely" and "squareone"
 
+fab file never syncdbs
+
 line 85-87 on squareone.apache2 -- ssl certificate info and such shouldn't have squareone hardcoded
 
 do we care about html5lib as a dependency for squareone? why?
@@ -17,6 +19,8 @@ what is all this email host port backend garbage?
 
 is it a problem that this SECRET key isn't unique? (all other squareone projects will share it)
 
+
+rename site title in templates
 README
 
 setting up the project

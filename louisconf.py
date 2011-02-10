@@ -52,7 +52,7 @@ SYSADMINS = {
 
 HOSTS = (
 #   ('ip address', 'hostname'),
-    ('173.255.193.170', 'dev'),
+    ('173.255.225.206', 'poop'),
 )
 
 """
