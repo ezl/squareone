@@ -27,5 +27,3 @@ MESSAGE_LEVEL = message_constants.INFO
 EMAIL_HOST = 'localhost'
 EMAIL_PORT = '1025'
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
-
-NOTIFICATIONS_ENABLED = True

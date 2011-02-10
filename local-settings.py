@@ -15,7 +15,6 @@ DEBUG_TOOLBAR_CONFIG = {
 
 DATABASES = {
     'default':{
-        #'ENGINE': 'postgresql_psycopg2',
         'ENGINE': 'sqlite3',
         'NAME': 'squareone_DB.sqlite3',
     }
@@ -28,5 +27,3 @@ SOUTH_DATABASE_ADAPTERS = {
 EMAIL_HOST = 'localhost'
 EMAIL_PORT = '1025'
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
-
-NOTIFICATIONS_ENABLED = True

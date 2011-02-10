@@ -51,7 +51,7 @@ SYSADMINS = {
 }
 
 HOSTS = (
-#   ('ip address', 'hostname')
+#   ('ip address', 'hostname'),
     ('173.255.193.170', 'dev'),
 )
 
