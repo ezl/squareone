@@ -82,8 +82,8 @@
 #     SSLCipherSuite ALL:!ADH:!EXPORT56:RC4+RSA:+HIGH:+MEDIUM:+LOW:+SSLv2:+EXP:+eNULL
 #     # ssl hosts on highsite1 use these params too:
 #     #SSLOptions +FakeBasicAuth +ExportCertData +StrictRequire
-#     SSLCertificateFile /home/%(project_username)s/%(project_name)s/deploy/ssl/squareone.com.crt
-#     SSLCertificateKeyFile /home/%(project_username)s/%(project_name)s/deploy/ssl/www.squareone.com.key
+#     SSLCertificateFile /home/%(project_username)s/%(project_name)s/deploy/ssl/%(project_name)s.com.crt
+#     SSLCertificateKeyFile /home/%(project_username)s/%(project_name)s/deploy/ssl/www.%(project_name)s.com.key
 #     SSLCertificateChainFile /home/%(project_username)s/%(project_name)s/deploy/ssl/gd_bundle.crt
 # 
 #     #### WSGI ####
