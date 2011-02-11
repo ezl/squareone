@@ -1,0 +1,150 @@
+README will probably look something like this.
+
+Instructions.
+clone the repo
+edit louisconf:
+add HOSTS, SYSADMINS
+and fill out good values for all that garbage.
+
+add your ssh keys in deploy/keys or wherever, as specified in SYSADMINS.
+
+rm -rf .git (blast the existing git repo for square one.  you can't push to it anyways.)
+squareone is designed to be deployed from a master repository. create that repo.
+git init "projectname"
+git remote add somewhere like github
+git commit
+git push
+
+say your host name is foo.
+commands to run on a VIRGIN server:
+from the project root (where the fabfile and louisconf live)
+$ fab foo:root init_server (this sets up the server. you have to log in as root. this will do a whole bunch of installation garbage and take ~5 min)
+$ fab foo:<your username as specified in the SYSADMINS> giddyup
+
+thats all folks
+
+@done
+projects.py: if repo exists, asks if you want to reclone it.
+fab file does not syncdb. problem.
+
+@todo
+should we use templates at all? i think there should be a local init file in squareone that sets up the next project.
+add virtualenvwrapper to the project user
+rename site title in templates
+create README
+you have to push your repo somewhere else or squareone doesn't know what to do with it
+
+@todo
+test addition and removal of other users
+
+
+managers vs admins? in settings.py, MANAGERS = ADMINS.  But since ADMINS isn't set until after that line (in the production0settings, that isn't set)
+
+
+@LEASELY QUESTIONS
+"filename" template tag?
+email or auth backend
+wtf does admin files do?
+
+("Lost terminal")
+<edgarallanpoe> i want to replace all occurences of "foo" with "bar" in a file from the command line.  whats the appropriate tool?
+<ascheel> edgarallanpoe: sed
+<geirha> !faq rename > edgarallanpoe
+<greybot> edgarallanpoe: http://mywiki.wooledge.org/BashFAQ/030 -- How can I rename all my *.foo files to *.bar, or convert spaces to underscores, or convert upper-case file names to lower case?
+<f00bar80> ascheel, coding the file , mistyped it
+<geirha> No, the appropriate tool is not sed
+7<edgarallanpoe> i wish cell phone customer support was that good
+* hmmgamer55 has quit (Read error: Connection reset by peer)
+* km has quit (Remote host closed the connection)
+<palhmbs> so -- for anybody who want to move the Flash youtube's videos from /tmp -- to keep, just:  find /tmp/Flash* -exec mv {} /Video/saved_flvs_from_tmp/ \; -- then run  --- for file in /Video/saved_flvs_from_tmp/Flash*; do read -i "$(printf %q "$file")" -ep "Rename to: " newname; [[ $base != "$newname" ]] || continue; mv "$file" "$newname.flv"; done
+<geirha> edgarallanpoe: Err, sorry that was the wrong faq.
+<geirha> !faq replace > edgarallanpoe
+<greybot> edgarallanpoe: http://mywiki.wooledge.org/BashFAQ/021 -- How can I replace a string with another string in all files?
+* Pewpewarrows (~Pewpewar
+
+
+
+
+after fabric setup_project, have to do 3 things. log in and:
+1. set up syncdb that baby with the right settings
+2. easy_install egenix-mx-base, as per http://www.saltycrane.com/blog/2009/07/using-psycopg2-virtualenv-ubuntu-jaunty/
+3. restart apache
+
+~YAY.
+
+
+
+
+
+
+
+change database info in production-settings.py
+
+add your ssh keys to deploy/ssh
+add your new servers nickname and ip address to louisconf
+create an entry for yourself in SYSADMINS in louisconf
+
+fab $server:root init_server
+[you'll be prompted for root password, then fab will setup the new box]
+
+fab $server:$username setup_postgres:$project,$password
+fab $server:$username setup_project:$project
+
+
+
+
+
+deployment on falafel is messed up.  looks like falafel, but identifying as www.  how do you fix that?
+
+missing s on projectname in wsgi file ??
+correction on postgres creation 
+if password contains "=" messes up.  how to escape it?
+
+users.py:add_ssh_keys left "keys" file in my home directory
+
+python-egenix-mxdatetime
+http://www.saltycrane.com/blog/2009/07/using-psycopg2-virtualenv-ubuntu-jaunty/
+
+wbdE0=GzKhUI
+wbdE0=GzKhUI
+
+
+todo:
+one command deployment
+postgres create user doesn't work (no quotes around username)
+prompt for parameters in setup_project and postgres_user and postgres_db
+change to list of ip addresses for boxes
+change hard-coded stuff like "production-server" .  all boxes have their own "local_settings"
+louis should download its own dependencies (at least fabric)fa
+restart apache, prompt for passphrase if required
+
+install mx
+
+
+
+add server to louisconf
+fab ot:root init_server
+fab ot:ezl create_postgres_user:leasely,PASSWORD
+fab ot:ezl create_postgres_db:leasely,leasely
+fab ot:ezl setup_project:leasely,git@codebasehq.com:ezl/leasely/leasely.git,falafel.leasely.com,falafel.leasely.com
+install mxdatetime to virtualenv
+
+
+
+
+
+
+last:
+check for isntances of "leasely" and "squareone"
+
+questions for rz:
+do we care about html5lib as a dependency for squareone? why?
+users.py:16 doesn't seem to actually remove file keys? why?
+
+Why the F can't we pip install this?
+http://www.slideshare.net/lemonad/django-deployment-with-fabric
+
+notes
+i removed NOTIFICATIONS_ENABLED since i removed django-notification -- any reason to keep django-notification in this repo? I vote not.
+what is all this email host port backend garbage?
+is it a problem that this SECRET key isn't unique? (all other squareone projects will share it)
