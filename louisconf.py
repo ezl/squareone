@@ -48,6 +48,11 @@ SYSADMINS = {
             'email':        'ericzliu@gmail.com',
             'ssh_key_path': os.path.join(SSH_KEYS_DIR, 'ezl-id_rsa.pub')
         },
+    'rz' : {
+            'shell':        'zsh',
+            'email':        'rodguze@gmail.com',
+            'ssh_key_path': os.path.join(SSH_KEYS_DIR, 'rz-id_rsa.pub')
+        },
 }
 
 HOSTS = (
