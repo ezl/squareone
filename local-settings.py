@@ -1,4 +1,15 @@
+from settings import *
+import logging
+import louisconf
+
 DEBUG = True
+
+ADMINS = (
+    # ('Admin', 'null@example.com'),
+    # Use local-settings.py and production-settings.py
+)
+
+MANAGERS = ADMINS
 
 INSTALLED_APPS += ('debug_toolbar',)
 MIDDLEWARE_CLASSES += (

@@ -131,5 +131,4 @@ THUMBNAIL_EXTENSION = 'png'
 
 ADMINFILES_UPLOAD_TO = 'adminfiles_uploads/%Y/%m/'
 
-NOTIFICATIONS_ENABLED = True
 DEFAULT_FROM_EMAIL = 'default@example.com'
