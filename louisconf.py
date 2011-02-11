@@ -57,11 +57,11 @@ SYSADMINS = {
 
 HOSTS = (
 #   ('ip address', 'hostname'),
-    ('173.255.225.206', 'poop'),
+    ('173.255.225.206', 'linode3'),
 )
 
 
-PROJECT_NAME = "mynewproject"
+PROJECT_NAME = "squareone"
 GIT_URL = "https://github.com/ezl/squareone.git"
 
 PROJECT_USERNAME = None
@@ -69,9 +69,9 @@ GIT_BRANCH = "master"
 DJANGO_SETTINGS_MODULE = "production-settings"
 
 # ==================
-POSTGRES_USERNAME = "pgusername"
-POSTGRES_PASSWORD = "pgpass"
-POSTGRES_DBNAME = "pgdb"
+POSTGRES_USERNAME = "squareone"
+POSTGRES_PASSWORD = "squareone"
+POSTGRES_DBNAME = "squareone"
 
 APACHE_SERVER_NAME = "*"    # example.com
 APACHE_SERVER_ALIAS = "*"   # *.example.com
