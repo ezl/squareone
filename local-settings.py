@@ -16,7 +16,7 @@ DEBUG_TOOLBAR_CONFIG = {
 DATABASES = {
     'default':{
         'ENGINE': 'sqlite3',
-        'NAME': 'squareone_DB.sqlite3',
+        'NAME': 'squareoneDB.sqlite3',
     }
 }
 
