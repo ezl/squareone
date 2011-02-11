@@ -56,7 +56,7 @@ HOSTS = (
 )
 
 
-PROJECT_NAME = "squareone"
+PROJECT_NAME = "mynewproject"
 GIT_URL = "https://github.com/ezl/squareone.git"
 
 PROJECT_USERNAME = None
@@ -64,9 +64,9 @@ GIT_BRANCH = "master"
 DJANGO_SETTINGS_MODULE = "production-settings"
 
 # ==================
-POSTGRES_USERNAME = "squareone"
-POSTGRES_PASSWORD = "squareone"
-POSTGRES_DBNAME = "squareone"
+POSTGRES_USERNAME = "pgusername"
+POSTGRES_PASSWORD = "pgpass"
+POSTGRES_DBNAME = "pgdb"
 
 APACHE_SERVER_NAME = "*"    # example.com
 APACHE_SERVER_ALIAS = "*"   # *.example.com
