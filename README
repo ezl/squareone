@@ -1,0 +1,38 @@
+README
+
+squareone is "django-admin.py startproject" with a few bells and whistles.
+squareone uses fabric and louis to make deploying on a new server and updating easy.
+louis is designed to deploy and update from git repos.
+
+HOW TO MAKE SQUAREONE WORK FOR YOU
+
+@ Instructions.
+
+work in a virtualenv
+
+@@ Clone the squareone repository
+
+@@ Add your ssh key to the ssh key path defined in louisconf (default is: projectroot/deploy/ssh/<your-id_rsa.pub>)
+
+@@ Edit louisconf.py
+add the host(s) in the HOSTS tuple
+add yourself to the SYSADMINS dict:
+  the key for the dict will be your username. The ssh key will be used for authentication (password auth is disabled by louis)
+
+other parameters should be self explanatory.
+
+@@ Create a new git repo to house the project you are about to start.
+Repo must be accessible from any machine you want to deploy your project.
+
+from the project root (where the fabfile and louisconf live)
+rm -rf .git (blast the existing git repo for square one.  you can't push to it anyways.)
+git init "projectname"
+git remote add somewhere like github
+git commit
+git push
+
+$ fab foo:root init_server (this sets up the server. you have to log in as root. this will do a whole bunch of installation garbage and take ~5 min)
+$ fab foo:<your username as specified in the SYSADMINS> giddyup
+
+thats all folks
+

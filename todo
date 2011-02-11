@@ -1,27 +1,3 @@
-README will probably look something like this.
-
-Instructions.
-clone the repo
-edit louisconf:
-add HOSTS, SYSADMINS
-and fill out good values for all that garbage.
-
-add your ssh keys in deploy/keys or wherever, as specified in SYSADMINS.
-
-rm -rf .git (blast the existing git repo for square one.  you can't push to it anyways.)
-squareone is designed to be deployed from a master repository. create that repo.
-git init "projectname"
-git remote add somewhere like github
-git commit
-git push
-
-say your host name is foo.
-commands to run on a VIRGIN server:
-from the project root (where the fabfile and louisconf live)
-$ fab foo:root init_server (this sets up the server. you have to log in as root. this will do a whole bunch of installation garbage and take ~5 min)
-$ fab foo:<your username as specified in the SYSADMINS> giddyup
-
-thats all folks
 
 @done
 projects.py: if repo exists, asks if you want to reclone it.
