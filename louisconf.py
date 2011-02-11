@@ -68,6 +68,6 @@ POSTGRES_USERNAME = "squareone"
 POSTGRES_PASSWORD = "squareone"
 POSTGRES_DBNAME = "squareone"
 
-APACHE_SERVER_NAME = "leasely.com"
-APACHE_SERVER_ALIAS = "*.leasely.com"
+APACHE_SERVER_NAME = "*"    # example.com
+APACHE_SERVER_ALIAS = "*"   # *.example.com
 APACHE_SERVER_ADMIN = "null@example.com"

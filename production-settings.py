@@ -1,5 +1,6 @@
 from settings import *
 import logging
+import louisconf
 
 DEBUG = False
 
@@ -10,10 +11,10 @@ ADMINS = (
 DATABASES = {
     'default':{
         'ENGINE': 'postgresql_psycopg2',
-        'NAME': 'squareone',
+        'NAME': louisconf.POSTGRES_DBNAME,
         'HOST': 'localhost',
-        'USER': 'squareone',
-        'PASSWORD': 'squareone',
+        'USER': louisconf.POSTGRES_USERNAME,
+        'PASSWORD': louisconf.POSTGRES_PASSWORD,
     }
 }
 

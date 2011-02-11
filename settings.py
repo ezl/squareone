@@ -15,7 +15,7 @@ MANAGERS = ADMINS
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3', # Add 'postgresql_psycopg2', 'postgresql', 'mysql', 'sqlite3' or 'oracle'.
-        'NAME': 'squareone_DB.sqlite3',                      # Or path to database file if using sqlite3.
+        'NAME': 'squareoneDB.sqlite3',                      # Or path to database file if using sqlite3.
         'USER': '',                      # Not used with sqlite3.
         'PASSWORD': '',                  # Not used with sqlite3.
         'HOST': '',                      # Set to empty string for localhost. Not used with sqlite3.
@@ -132,4 +132,4 @@ THUMBNAIL_EXTENSION = 'png'
 ADMINFILES_UPLOAD_TO = 'adminfiles_uploads/%Y/%m/'
 
 NOTIFICATIONS_ENABLED = True
-DEFAULT_FROM_EMAIL = 'defaultfrom@email.com'
+DEFAULT_FROM_EMAIL = 'default@example.com'
