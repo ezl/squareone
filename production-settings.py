@@ -24,7 +24,3 @@ SOUTH_DATABASE_ADAPTERS = {
 
 from django.contrib.messages import constants as message_constants
 MESSAGE_LEVEL = message_constants.INFO
-
-EMAIL_HOST = 'localhost'
-EMAIL_PORT = '1025'
-EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
