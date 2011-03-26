@@ -22,7 +22,7 @@
         Allow from all
     </Location>
 
-    Alias /media /home/%(project_username)s/env/lib/python2.6/site-packages/django/contrib/admin/media
+    Alias /media /home/%(project_username)s/%(env_path)s/lib/python2.6/site-packages/django/contrib/admin/media
     <Location "/media">
         SetHandler None
         Order allow,deny
@@ -69,7 +69,7 @@
 #         Allow from all
 #     </Location>
 # 
-#     Alias /media /home/%(project_username)s/env/lib/python2.6/site-packages/django/contrib/admin/media
+#     Alias /media /home/%(project_username)s/%(env_path)s/lib/python2.6/site-packages/django/contrib/admin/media
 #     <Location "/media">
 #         SetHandler None
 #         Order allow,deny
