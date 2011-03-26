@@ -1,0 +1,236 @@
+/* STRUCTURAL, SITE LAYOUT STUFF */
+
+#header.preamble {
+  padding: 5px 0px;
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+  background-color: #003663;
+  color: white;
+  border-bottom-color: #0E64A7;
+}
+#auth ul {
+  float: right;
+  margin: 0;
+  font-size: 100%;
+}
+#auth ul li {
+    float: left;
+    margin-left: 10px;
+    list-style: none;
+    font-size: 90%;
+}
+#auth ul li.user {
+    background: url(/site_media/img/icons/user8.png) no-repeat 0 50%;
+    padding-left: 12px;
+}
+#auth ul li a{
+    font-weight: bold;
+    text-decoration: none;
+    display: block;
+    color: #65A4D9;
+}
+#auth .user {
+    color: white;
+}
+#auth ul li a:hover { text-decoration:underline; }
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+#wrapper {
+    min-height: 100%;
+    position: relative;
+/*    margin-bottom: 5px;*/
+}
+#top_bar {
+/* not actually being used for anything by tradechecking.com right now */
+    background: #003663;
+    color: #fff;
+}
+#top_bar a, #top_bar a:visited {
+    color: #fff;
+    padding: 5px;
+}
+#top_bar a:hover {
+    background: #000;
+}
+#right_top_bar {
+    text-align: right;
+}
+#left_top_bar {
+}
+#tab_bar {
+    background: #0b4e82;
+    padding: 0;
+}
+#right_tabs {
+    text-align: right;
+}
+#left_tabs {
+    text-align: left;
+}
+#tabs ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 20px 0 0px 0;
+}
+#tabs ul li {
+    list-style: none;
+    display: inline;
+}
+#left_tabs ul li{
+    margin: 0 2px 0 0;
+}
+#right_tabs ul li{
+    margin: 0 0 0 2px;
+}
+#tabs a, #tabs a:visited {
+    padding: 10px 15px 5px 15px;
+    line-height: 25px;
+    background: #0c5a97;
+    color: #fff;
+    font-weight: bold;
+    background-color: #0C5A97;
+    color: white;
+    border-top-color: #2075B7;
+    text-decoration: none;
+    font-weight: normal;
+    border-top-width: 1px;
+    border-top-style: solid;
+}
+#tabs a:hover {
+    background: #003663;
+    color: #fff;
+    border-bottom: 1px solid #003663!important;
+}
+#right_tabs a.active, #left_tabs a.active,
+#right_tabs a.active:hover, #left_tabs a.active:hover {
+    border-bottom: 1px solid #eee!important;
+    border-top-color: #eee;
+    font-weight: bold;
+    color: #333!important;
+    padding-left: 30px;
+}
+.dashboard-active{
+    background: #eee url(../img/icons/Settings_16x16.png) no-repeat 5px 10px!important;
+}
+
+#header_bar {
+    background: #eee;
+    border-bottom: 1px solid #ccc;
+    min-height: 30px;
+    padding: 5px 0 5px 0;
+}
+#header_bar p{
+    color: #777;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+#header_bar h1{
+    color: #544;
+    font-size:2em;
+    line-height:0.75;
+    margin-top:0.5em;
+    margin-bottom:0.25em;
+    font-weight: bold;
+}
+#header_bar a, #header_bar a:visited {
+    color: #544;
+    text-decoration: none;
+}
+#header_bar a:hover {
+    text-decoration: underline;
+}
+#main {
+    padding-top: 1em;
+    padding-bottom: 160px;
+    overflow: visible;
+    min-height: 250px;
+}
+#footer {
+    bottom:0;
+  /*  margin-top: -155px; /* negative value of footer height */
+    padding-top: 20px;
+    height: 150px;
+    clear:both;
+    background: #222;
+    color: #fff;
+    border-top: 2px solid #0E64A7;
+    position: relative;
+    overflow: hidden;
+}
+#footer a, #footer a:visited { text-decoration:none;}
+#footer a:hover{ color: #eef; text-decoration:underline;}
+#footer h3{ color:#aaa;}
+#footer h5{
+    margin: 0;
+    margin-top: 20px;
+    font-weight: normal;
+    color: #fff;
+}
+#sitelogo{
+    text-align: right;
+    margin: 0;
+}
+
+#homepage_left_column {
+    margin-right:10px;
+    border-right:1px solid #dadada;
+}
+
+/* MESSAGES */
+
+.message {
+    overflow: hidden;
+    padding-left: 40px;
+    /* lets round them corners! */
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    border-top-left-radius: 3px 3px;
+    border-top-right-radius: 3px 3px;
+    border-bottom-right-radius: 3px 3px;
+    border-bottom-left-radius: 3px 3px;
+}
+.error {
+    border: 1px solid #E9C59B;
+    background: #FFECCE url(/site_media/img/icons/messages/error.gif) 12px 12px no-repeat;
+    color: #E3302C;
+}
+.warning {
+    border: 1px solid #E5E181;
+    background: #FEFDE2 url(/site_media/img/icons/messages/warning.gif) 12px 12px no-repeat;
+    color: #666;
+}
+.success {
+    border: 1px solid #BFDE84;
+    background: #EDFBD8 url(/site_media/img/icons/messages/success.gif) 12px 12px no-repeat;
+    color: #508600;
+}
+.info {
+    border: 1px solid #BBDBE0;
+    background: #ECF9FF url(/site_media/img/icons/messages/info.gif) 12px 12px no-repeat;
+    color: #0888C3;
+}
+.message .close {
+    display: block;
+    float: right;
+    width: 16px;
+    height: 16px;
+    background: url(/site_media/img/icons/messages/close.png) 0 0 no-repeat;
+    margin-top: 2px;
+    margin-left: 0.5em;
+    cursor: pointer;
+    -moz-opacity: 0.7;
+    opacity: 0.7;
+}
+
+/* IE6/7 Fix for forms */
+.input-wrapper {
+  position: relative;
+  display: inline-block;
+  height: 29px;
+}
+

@@ -1,43 +1,83 @@
-  <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
-  "http://www.w3.org/TR/html4/loose.dtd">
+<!DOCTYPE html>
 <html>
 <head>
+  <meta content='text/html; charset=utf-8' http-equiv='Content-type'>
   <title>{% block title %}Site Title{% endblock %}</title>
   <link rel="stylesheet" href="{{ MEDIA_URL }}css/blueprint/screen.css" type="text/css" media="screen">
   <link rel="stylesheet" href="{{ MEDIA_URL }}css/blueprint/print.css" type="text/css" media="print">
   <!--[if lt IE 8]><link rel="stylesheet" href="{{ MEDIA_URL }}css/blueprint/ie.css" type="text/css" media="screen, projection"><![endif]-->
+  <link rel="stylesheet" href="{{ MEDIA_URL }}css/base.css" type="text/css" media="screen">
   <link type="text/css" href="{{MEDIA_URL}}css/jqueryui/jquery-ui-1.8.6.custom.css" rel="Stylesheet" />	
   <script type="text/javascript" src="{{MEDIA_URL}}js/jquery-1.4.2.min.js"></script>
-  <script type="text/javascript" src="{{MEDIA_URL}}js/jquery-ui-1.8.6.custom.min.js"></script>
-
   <meta name="description" content="Description">
   <meta name="keywords" content="Key, Words">
+  <script type="text/javascript" src="{{MEDIA_URL}}js/site.js"></script>
 
   {% block extra_head %}{% endblock %}
 </head>
 
 <body>
-  <div class="container">
-    <div id="header">
-      <div id="left_top_bar" class="span-14">
-        <a href="/">[Site Name]</a>
-      </div>
-      <div id="right_top_bar" class="span-10 last">
-        {% if request.user.is_authenticated %}
-          <p>Logged in as {{ request.user }} | <a href="{% url accounts_user_settings %}">My Settings</a> | <a href="{% url logout %}">Logout</a></p>
-        {% else %}
-            <a href="{% url login %}">Login</a> or <a href="{% url register %}">Register</a>
-        {% endif %}
-      </div><!-- span 24 -->
-      <hr />
-    </div>
+    <div id="header" class="preamble">
+      <div class="container" id="auth">
+          {% if request.user.is_authenticated %}
+            <ul>
+              <li class="user">Logged in as {{ request.user }}</li>
+              <li><a href="{% url accounts_user_settings %}">My Settings</a></li>
+              <li><a href="{% url logout %}">Logout</a></li>
+            </ul>
+          {% else %}
+               <ul>
+                 <li class="user"><a href="{% url login %}">Login</a></li>
+                 <li><a href="{% url register %}">Register</a></li>
+               </ul>
+          {% endif %}
+      </div> <!-- container -->
+    </div><!-- header -->
 
-    <div id="main">
+    {% block tab_bar %}
+    <div id="tab_bar">
+      <div class="container">
+        <div id="tabs" class="span-24">
+          <div id="left_tabs" class="span-14">
+            <ul>
+              <li><a href="">Link 1</a></li>
+              <li><a href="">Link 2</a></li>
+{% comment %}
+              <li><a href="{% url trade %}" {% block trade %}{% endblock %}>Trade</a></li>
+              <li><a href="{% url position %}" {% block position %}{% endblock %}>Position</a></li>
+{% endcomment %}
+            </ul>
+          </div>
+          <div id="right_tabs" class="span-10 last">
+            <ul>
+             <li><a href="{% url accounts_user_settings %}" {% block settings %}{% endblock %}>Settings</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div><!-- tab bar -->
+    {% endblock %}
+
+    <div id="header_bar">
+      <div class="container">
+        <div class="span-18">
+          <h1><a href="">Foo</a></h1>
+          {% block header_bar %}
+            <p>Bar</p>
+          {% endblock %}
+        </div>
+      </div>
+    </div><!-- header_bar -->
+
+    <div id="main" class="container left_tabs">
       {% block messages %}
         {% if messages %}
           <div class="span-24 last">
             {% for message in messages %}
-              <div{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</div>
+              <div{% if message.tags %} class="message {{ message.tags }}"{% endif %}>
+                <div class="close"></div>
+                <div>{{ message }}</div>
+              </div>
             {% endfor %}
           </div>
           <div class="clear"></div>
@@ -47,16 +87,7 @@
       {% block main %}{% endblock %}
     </div><!-- main -->
 
-    <div id="footer">
-      <div class="span-24 last append-bottom">
-        {% block footer %}
-          <hr/ >
-          Here, have a footer!
-        {% endblock %}
-      </div>
-    </div><!-- footer -->
-
-  </div><!-- big container guy -->
+    {% include "footer.html" %}
 
 </body>
 </html>
