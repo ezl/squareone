@@ -48,18 +48,16 @@ SYSADMINS = {
             'email':        'ericzliu@gmail.com',
             'ssh_key_path': os.path.join(SSH_KEYS_DIR, 'ezl-id_rsa.pub')
         },
-    'rz' : {
-            'shell':        'zsh',
-            'email':        'rodguze@gmail.com',
-            'ssh_key_path': os.path.join(SSH_KEYS_DIR, 'rz-id_rsa.pub')
-        },
+#     'rz' : {
+#             'shell':        'zsh',
+#             'email':        'rodguze@gmail.com',
+#             'ssh_key_path': os.path.join(SSH_KEYS_DIR, 'rz-id_rsa.pub')
+#         },
 }
 
 HOSTS = (
 #   ('ip address', 'hostname'),
-    ('173.255.225.206', 'linode3'),
     ('127.0.0.1', 'localhost'),
-    ('173.255.203.60', 'dev'),
 )
 
 
