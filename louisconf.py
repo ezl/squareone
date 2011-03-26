@@ -58,6 +58,8 @@ SYSADMINS = {
 HOSTS = (
 #   ('ip address', 'hostname'),
     ('173.255.225.206', 'linode3'),
+    ('127.0.0.1', 'localhost'),
+    ('173.255.203.60', 'dev'),
 )
 
 
