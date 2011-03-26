@@ -6,7 +6,6 @@ DEBUG = True
 
 ADMINS = (
     # ('Admin', 'null@example.com'),
-    # Use local-settings.py and production-settings.py
 )
 
 MANAGERS = ADMINS
@@ -27,7 +26,7 @@ DEBUG_TOOLBAR_CONFIG = {
 DATABASES = {
     'default':{
         'ENGINE': 'sqlite3',
-        'NAME': 'squareoneDB.sqlite3',
+        'NAME': '%s_DB.sqlite3' % louisconf.POSTGRES_DBNAME,
     }
 }
 
