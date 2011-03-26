@@ -1,5 +1,5 @@
 import site
-site.addsitedir('/home/%(project_username)s/env/lib/python2.6/site-packages')
+site.addsitedir('/home/%(project_username)s/%(env_path)s/lib/python2.6/site-packages')
 
 import sys
 sys.path.append('/home/%(project_username)s')
