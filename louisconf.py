@@ -13,6 +13,7 @@ BASIC_PACKAGES = (
     'apticron',
     'aptitude',
     'apt-listchanges',
+    'colordiff',
     'emacs22-nox',
     'emacs-goodies-el',
     'exuberant-ctags',
