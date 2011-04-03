@@ -10,7 +10,7 @@ ADMINS = (
 
 DATABASES = {
     'default':{
-        'ENGINE': 'postgresql_psycopg2',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': louisconf.POSTGRES_DBNAME,
         'HOST': 'localhost',
         'USER': louisconf.POSTGRES_USERNAME,

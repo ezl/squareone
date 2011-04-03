@@ -59,6 +59,7 @@ SYSADMINS = {
 HOSTS = (
 #   ('ip address', 'hostname'),
     ('127.0.0.1', 'localhost'),
+    ('173.255.203.60', 'testlinode'),
 )
 
 
