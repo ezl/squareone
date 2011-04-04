@@ -126,6 +126,7 @@ AUTHENTICATION_BACKENDS = (
 )
 AUTH_PROFILE_MODULE = 'accounts.UserProfile' # or whatever you want
 LOGIN_REDIRECT_URL = '/'
+REGISTER_REDIRECT_URL = '/'
 
 THUMBNAIL_EXTENSION = 'png'
 
