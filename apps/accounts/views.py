@@ -23,14 +23,13 @@ from utils import get_redirect_url
 @csrf_protect
 @never_cache
 def login(request, template_name='accounts/login.html',
-          authentication_form=AuthenticationForm,
           extra_context={}):
     """
     contrib.auth.views.login, but with a few added benefits: extra_context and
     it redirects to settings.LOGIN_REDIRECT_URL if user is already logged in.
     """
     if request.method == 'POST':
-        form = authentication_form(data=request.POST)
+        form = AuthenticationForm(data=request.POST)
         if form.is_valid():
             redirect_to = get_redirect_url(request, redirect_field_name='next',
                                            fallback=settings.LOGIN_REDIRECT_URL)
@@ -39,7 +38,7 @@ def login(request, template_name='accounts/login.html',
                 request.session.delete_test_cookie()
             return HttpResponseRedirect(redirect_to)
     else:
-        form = authentication_form(request)
+        form = AuthenticationForm(request)
     request.session.set_test_cookie()
     if Site._meta.installed:
         current_site = Site.objects.get_current()
